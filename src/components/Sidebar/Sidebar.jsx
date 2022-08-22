@@ -3,7 +3,7 @@ import './sidebar.scss';
 
 const Sidebar = ({addJournalEntry}) => {
   return (
-    <aside className="sidebar flex">
+    <aside className="sidebar fixed flex">
             <h1 className="logo">Polaris</h1>
             
             <button 

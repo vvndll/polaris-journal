@@ -50,17 +50,19 @@ const App = () => {
   
   return (
     <div className='flex'>
-      <Sidebar addJournalEntry={addJournalEntry}/>
-      <Main 
-          entries={entries} 
-          addJournalEntry={addJournalEntry} 
-          deleteJournalEntry={deleteJournalEntry}
-          activeEntry={activeEntry}
-          setActiveEntry={setActiveEntry}
-          setToggleForm={setToggleForm}
-       />
+        <Sidebar addJournalEntry={addJournalEntry}/>
+        <div className="second__container flex">
+            <Main 
+              entries={entries} 
+              addJournalEntry={addJournalEntry} 
+              deleteJournalEntry={deleteJournalEntry}
+              activeEntry={activeEntry}
+              setActiveEntry={setActiveEntry}
+              setToggleForm={setToggleForm}
+          />
 
-      {toggleForm && (<Form setToggleForm={setToggleForm} activeEntry={getActiveEntry()} updateEntry={updateEntry} />)}
+          {toggleForm && (<Form setToggleForm={setToggleForm} activeEntry={getActiveEntry()} updateEntry={updateEntry} />)}
+            </div>
     </div>
   );
 };

@@ -3,7 +3,7 @@
     --clr-black: rgba(13, 13, 13, 0.95);
     --clr-gray: rgba(218, 218, 218, 0.71);
     --clr-tea: rgba(187, 202, 166);
-    --clr-teaclear: rgb(187, 202, 166, 0.50);
+    --clr-teaclear: rgb(187, 202, 166, 0.40);
     --clr-red: rgb(255, 78, 19);
 
     --main-fnt: 'Satoshi', sans-serif;
@@ -49,6 +49,19 @@ input {
     width: 100%;
 
     font: inherit;
+
+    outline: none;
+
+    color: inherit;
+}
+
+textarea {
+    outline: none;
+    resize: none;
+
+    color: inherit;
+
+    font: inherit;
 }
 
 input::placeholder {font: inherit;}
@@ -84,3 +97,7 @@ body {
 .absolute {position: absolute;}
 
 .relative {position: relative;}
+
+.second__container {
+    width: 100%;
+}

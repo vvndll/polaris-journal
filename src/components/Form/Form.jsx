@@ -13,7 +13,7 @@ const Form = ({ setToggleForm, activeEntry, updateEntry }) => {
   };
 
   return (
-    <form className="journal__form fixed">
+    <form className="journal__form">
         <input 
             type="text" 
             name="title" 
@@ -32,12 +32,14 @@ const Form = ({ setToggleForm, activeEntry, updateEntry }) => {
 
         </textarea>
            
-        <button 
-            className="save flex"
-            onClick={()=> setToggleForm(false)}
-        >
-            Save <i class="bi bi-arrow-right"></i>
-        </button>
+        <div className="btn__cont flex">
+          <button 
+              className="save"
+              onClick={()=> setToggleForm(false)}
+          >
+              Save <i class="bi bi-arrow-right"></i>
+          </button>
+        </div>
     </form>
   );
 };

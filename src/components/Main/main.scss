@@ -2,6 +2,8 @@ div.main__container {
     width: 100%;
     height: 100%;
 
+    padding-left: 5rem;
+
     header.journal__header {
         justify-content: space-between;
         align-items: center;
@@ -22,7 +24,9 @@ div.main__container {
 
             border-bottom: 1px solid var(--clr-teaclear);
 
-            color: var(--clr-teaclear);
+            color: var(--clr-tea);
+
+            transition: var(--trans);
 
             cursor: pointer;
 
@@ -72,7 +76,8 @@ div.main__container {
             }
 
             &:hover {
-                color: var(--clr-tea);
+                background-color: var(--clr-teaclear);
+                color: var(--clr-white);
             }
         }
     }
