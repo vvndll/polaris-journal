@@ -1,0 +1,86 @@
+:root {
+    --clr-white: rgb(246, 246, 246);
+    --clr-black: rgba(13, 13, 13, 0.95);
+    --clr-gray: rgba(218, 218, 218, 0.71);
+    --clr-tea: rgba(187, 202, 166);
+    --clr-teaclear: rgb(187, 202, 166, 0.50);
+    --clr-red: rgb(255, 78, 19);
+
+    --main-fnt: 'Satoshi', sans-serif;
+
+    --trans: .2s ease-out;
+}
+
+
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: inherit;
+
+    text-decoration: none;
+
+    transition: color var(--trans);
+}
+
+a:hover {color: var(--gray-clr);}
+
+ul {list-style: none;}
+
+button {
+    display: block;
+
+    border: none;
+
+    background: none;
+
+    font: inherit;
+
+    cursor: pointer;
+}
+
+input {
+    display: block;
+
+    width: 100%;
+
+    font: inherit;
+}
+
+input::placeholder {font: inherit;}
+
+img {
+    display: block;
+
+    width: 100%;
+}
+
+span {
+    display: inline;
+}
+
+html {
+    overscroll-behavior: contain;
+}
+
+body {
+    background-color: var(--clr-black);
+    color:var(--clr-tea);
+
+    font-family: var(--main-fnt);
+}
+
+
+.flex {display: flex;}
+
+.grid {display: grid;}
+
+.fixed {position: fixed;}
+
+.absolute {position: absolute;}
+
+.relative {position: relative;}

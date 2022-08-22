@@ -1,25 +1,68 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {useState, useEffect} from 'react';
+import './app.scss';
+import Main from './components/Main/Main';
+import Sidebar from './components/Sidebar/Sidebar';
+import Form from './components/Form/Form';
 
-function App() {
+const App = () => {
+  const [entries, setEntries] = useState( localStorage.entries ? JSON.parse(localStorage.entries) : []);
+
+  const [activeEntry, setActiveEntry] = useState([false]);
+
+  const [toggleForm, setToggleForm] = useState(false);
+
+  useEffect(() => {
+    localStorage.setItem("entries", JSON.stringify(entries))
+  }, [entries]);
+
+  const addJournalEntry = () => {
+    const uniqueId = () => parseInt(Date.now() * Math.random()).toString();
+
+    const newEntry = {
+      id: uniqueId(),
+      title: "Untitled",
+      content: "",
+      lastModified: Date.now()
+    }; 
+
+    setEntries([newEntry, ...entries]);
+  };
+
+  const deleteJournalEntry = (entryIdToDelete) => {
+    setEntries(entries.filter((entry) => entry.id !== entryIdToDelete))
+  };
+
+  const getActiveEntry = () => {
+    return entries.find((entry) => entry.id === activeEntry);
+  };
+
+  const updateEntry = (updatedEntry) => {
+    const updatedEntries = entries.map((entry) => {
+      if(entry.id === activeEntry) {
+        return updatedEntry;
+      };
+
+      return entry;
+    });
+
+    setEntries(updatedEntries);
+  };
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='flex'>
+      <Sidebar addJournalEntry={addJournalEntry}/>
+      <Main 
+          entries={entries} 
+          addJournalEntry={addJournalEntry} 
+          deleteJournalEntry={deleteJournalEntry}
+          activeEntry={activeEntry}
+          setActiveEntry={setActiveEntry}
+          setToggleForm={setToggleForm}
+       />
+
+      {toggleForm && (<Form setToggleForm={setToggleForm} activeEntry={getActiveEntry()} updateEntry={updateEntry} />)}
     </div>
   );
-}
+};
 
 export default App;
