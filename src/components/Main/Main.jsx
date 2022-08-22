@@ -32,7 +32,15 @@ const Journal = ({entries, addJournalEntry, deleteJournalEntry, activeEntry, set
 
                     <div className="journal__preview grid" key={id}>
                         <div className="journal__title"><strong>{title}</strong></div>
-                        <div className="journal__content">{content && content.substr(0, 150)}</div>
+                        <div className="journal__content">
+                            <div class="ticker__container">
+                                <div class="ticker__move flex">
+                                    <span class="ticker__item">{content && content.substr(0, 100)}</span>
+                                    <span class="ticker__item">{content && content.substr(0, 100)}</span>
+                                    <span class="ticker__item">{content && content.substr(0, 100)}</span>   
+                                </div>
+                            </div>
+                        </div>
                         <small className="journal__date">`last modified: {new Date(lastModified).toLocaleDateString("en-US", {hour: "2-digit", minute: "2-digit"})}`</small>
                     </div>
                 

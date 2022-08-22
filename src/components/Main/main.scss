@@ -57,11 +57,44 @@ div.main__container {
             div.journal__preview {
                 width: 100%;
 
-                grid-template-columns: 20% 65% 15%;
+                grid-template-columns: 25% 55% 25%;
 
                 text-align: center;
 
                 align-items: center;
+
+                .journal__content {
+                    div.ticker__container {
+                        overflow: hidden;
+                       
+                        font-size: inherit;
+                
+                        cursor: pointer;
+                
+                        div.ticker__move {
+                            width: 0;
+
+                            animation: tickerH 20s  infinite linear forwards;
+                
+                            span.ticker__item {
+                
+                                width: max-content;
+                
+                                margin-right: .5rem;
+                
+                                text-align: justify;
+                
+                                flex-shrink: 0;
+                
+                            }
+                        }
+                    }
+                
+                    @keyframes tickerH {
+                        0% {transform: translate3d(0, 0, 0);}
+                        100% {transform: translate3d(-50rem,0 ,0);}
+                    }
+                }
 
                 small {
                     font-size: .6rem;
