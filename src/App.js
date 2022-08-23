@@ -21,7 +21,7 @@ const App = () => {
     const newEntry = {
       id: uniqueId(),
       title: "Untitled",
-      content: "",
+      content: "No Content",
       lastModified: Date.now()
     }; 
 
