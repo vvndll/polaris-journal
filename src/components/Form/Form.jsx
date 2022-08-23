@@ -1,7 +1,7 @@
 import React from 'react';
 import './form.scss';
 
-const Form = ({ setToggleForm, activeEntry, updateEntry }) => {
+const Form = ({ setToggleForm, activeEntry, updateEntry}) => {
 
   const editEntry = (inputField, value) => {
 

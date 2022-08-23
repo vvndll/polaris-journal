@@ -33,11 +33,11 @@ const Journal = ({entries, addJournalEntry, deleteJournalEntry, activeEntry, set
                     <div className="journal__preview grid" key={id}>
                         <div className="journal__title"><strong>{title}</strong></div>
                         <div className="journal__content">
-                            <div class="ticker__container">
-                                <div class="ticker__move flex">
-                                    <span class="ticker__item">{content && content.substr(0, 100)}</span>
-                                    <span class="ticker__item">{content && content.substr(0, 100)}</span>
-                                    <span class="ticker__item">{content && content.substr(0, 100)}</span>   
+                            <div className="ticker__container">
+                                <div className="ticker__move flex">
+                                    <span className="ticker__item">{content && content.substr(0, 100)}</span>
+                                    <span className="ticker__item">{content && content.substr(0, 100)}</span>
+                                    <span className="ticker__item">{content && content.substr(0, 100)}</span>   
                                 </div>
                             </div>
                         </div>
