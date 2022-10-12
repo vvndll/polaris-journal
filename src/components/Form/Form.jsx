@@ -1,7 +1,23 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import './form.scss';
 
 const Form = ({ setToggleForm, activeEntry, updateEntry}) => {
+
+  const formRef = useRef();
+
+    useEffect(() => {
+        const close = (e) => {
+        if (!formRef.current.contains(e.target)) {
+            setToggleForm(false);
+        }
+        };
+
+        document.addEventListener('mousedown', close);
+
+        return() => {
+        document.removeEventListener('mousedown', close);
+        }
+    });
 
   const editEntry = (inputField, value) => {
 
@@ -13,7 +29,7 @@ const Form = ({ setToggleForm, activeEntry, updateEntry}) => {
   };
 
   return (
-    <form className="journal__form">
+    <form className="journal__form fixed" ref={formRef}>
         <input 
             type="text" 
             name="title" 
